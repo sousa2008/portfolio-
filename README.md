@@ -72,4 +72,5 @@ A documentação do projeto está na pasta `docs/`:
 
 ## Aplicação publicada
 
-A aplicação não possui link de publicação no momento.
+Entre o link abaixo e veja o site no ar: 
+[CLIQUE AQUI!](https://sousa2008.github.io/portfolio-/)
