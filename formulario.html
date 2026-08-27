@@ -58,12 +58,14 @@
                         <textarea class="form-control" id="form-sobreMim" name="sobreMim" rows="4"></textarea>
                     </div>
                     <div class="col-md-6">
-                        <label for="form-fotoPerfil" class="form-label">URL da foto de perfil</label>
-                        <input type="url" class="form-control" id="form-fotoPerfil" name="fotoPerfil" placeholder="https://...">
+                        <label for="form-fotoPerfil" class="form-label">Foto de perfil</label>
+                        <input type="file" class="form-control" id="form-fotoPerfil" name="fotoPerfil" accept="image/*">
+                        <input type="hidden" id="form-fotoPerfilAtual" name="fotoPerfilAtual">
                     </div>
                     <div class="col-md-6">
-                        <label for="form-fotoSobre" class="form-label">URL da foto Sobre Mim</label>
-                        <input type="url" class="form-control" id="form-fotoSobre" name="fotoSobre" placeholder="https://...">
+                        <label for="form-fotoSobre" class="form-label">Foto Sobre Mim</label>
+                        <input type="file" class="form-control" id="form-fotoSobre" name="fotoSobre" accept="image/*">
+                        <input type="hidden" id="form-fotoSobreAtual" name="fotoSobreAtual">
                     </div>
                     <div class="col-md-4">
                         <label for="form-localizacao" class="form-label">Localização</label>

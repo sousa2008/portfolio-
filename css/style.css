@@ -557,6 +557,26 @@ footer a:hover {
     margin-bottom: 0;
 }
 
+.interactive-card {
+    max-width: 760px;
+}
+
+.interactive-card h2 {
+    font-size: 1.1rem;
+    color: var(--color-primary);
+    margin-top: 1.8rem;
+    margin-bottom: 0.8rem;
+}
+
+.interactive-card li,
+.interactive-card p {
+    font-size: 0.95rem;
+}
+
+.interactive-page .btn-editar {
+    display: inline-flex;
+}
+
 /* Alert de campos faltantes */
 #missingFieldsAlert {
     background: var(--color-warning-light);

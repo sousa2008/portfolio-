@@ -79,8 +79,9 @@ function addProjeto(data = null) {
                     <textarea class="form-control" id="projetos-${idx}-descricao" name="projetos[${idx}][descricao]" rows="2">${escapeHtml(data?.descricao || '')}</textarea>
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label" for="projetos-${idx}-imagem">URL da imagem</label>
-                    <input type="url" class="form-control" id="projetos-${idx}-imagem" name="projetos[${idx}][imagem]" value="${escapeHtml(data?.imagem || '')}">
+                    <label class="form-label" for="projetos-${idx}-imagem">Imagem do projeto</label>
+                    <input type="file" class="form-control" id="projetos-${idx}-imagem" name="projetos[${idx}][imagem]" accept="image/*">
+                    <input type="hidden" name="projetos[${idx}][imagemAtual]" value="${escapeHtml(data?.imagem || '')}">
                 </div>
                 <div class="col-md-3">
                     <label class="form-label" for="projetos-${idx}-linkCodigo">Link do código</label>
@@ -210,8 +211,9 @@ function addViagem(data = null) {
                     <input type="text" class="form-control" id="viagens-${idx}-periodo" name="viagens[${idx}][periodo]" value="${escapeHtml(data?.periodo || '')}">
                 </div>
                 <div class="col-md-4">
-                    <label class="form-label" for="viagens-${idx}-imagem">URL da imagem</label>
-                    <input type="url" class="form-control" id="viagens-${idx}-imagem" name="viagens[${idx}][imagem]" value="${escapeHtml(data?.imagem || '')}">
+                    <label class="form-label" for="viagens-${idx}-imagem">Imagem da viagem</label>
+                    <input type="file" class="form-control" id="viagens-${idx}-imagem" name="viagens[${idx}][imagem]" accept="image/*">
+                    <input type="hidden" name="viagens[${idx}][imagemAtual]" value="${escapeHtml(data?.imagem || '')}">
                 </div>
                 <div class="col-12">
                     <label class="form-label" for="viagens-${idx}-descricao">Descrição</label>
@@ -228,7 +230,22 @@ function removeGroup(btn) {
 }
 
 // ===== COLETAR DADOS DO FORMULÁRIO =====
-function collectFormData() {
+function readImageFile(file) {
+    if (!file || !file.size) return Promise.resolve('');
+    return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(reader.result);
+        reader.onerror = () => reject(reader.error);
+        reader.readAsDataURL(file);
+    });
+}
+
+async function getImageValue(container, fileName, currentName) {
+    const file = container.querySelector(`[name="${fileName}"]`)?.files[0];
+    return file ? readImageFile(file) : (container.querySelector(`[name="${currentName}"]`)?.value || '');
+}
+
+async function collectFormData() {
     const form = document.getElementById('portfolioForm');
     const fd = new FormData(form);
 
@@ -238,8 +255,8 @@ function collectFormData() {
             cargo: fd.get('cargo') || '',
             bio: fd.get('bio') || '',
             sobreMim: fd.get('sobreMim') || '',
-            fotoPerfil: fd.get('fotoPerfil') || '',
-            fotoSobre: fd.get('fotoSobre') || '',
+            fotoPerfil: await getImageValue(form, 'fotoPerfil', 'fotoPerfilAtual'),
+            fotoSobre: await getImageValue(form, 'fotoSobre', 'fotoSobreAtual'),
             localizacao: fd.get('localizacao') || '',
             nascimento: fd.get('nascimento') || '',
             idiomas: fd.get('idiomas') || '',
@@ -275,8 +292,8 @@ function collectFormData() {
         if (item.curso) data.formacao.push(item);
     });
 
-    document.querySelectorAll('#projetosContainer .repeatable-group').forEach(group => {
-        const inputs = group.querySelectorAll('input, textarea');
+    for (const group of document.querySelectorAll('#projetosContainer .repeatable-group')) {
+        const inputs = group.querySelectorAll('input:not([type="file"]), textarea');
         const item = {};
         inputs.forEach(input => {
             const name = input.getAttribute('name');
@@ -285,8 +302,11 @@ function collectFormData() {
                 item[key] = input.value;
             }
         });
-        if (item.nome) data.projetos.push(item);
-    });
+        if (item.nome) {
+            item.imagem = await getImageValue(group, `projetos[${group.dataset.idx}][imagem]`, `projetos[${group.dataset.idx}][imagemAtual]`);
+            data.projetos.push(item);
+        }
+    }
 
     document.querySelectorAll('#experienciasContainer .repeatable-group').forEach(group => {
         const inputs = group.querySelectorAll('input, textarea');
@@ -314,7 +334,7 @@ function collectFormData() {
         if (item.nome) data.hobbies.push(item);
     });
 
-    document.querySelectorAll('#viagensContainer .repeatable-group').forEach(group => {
+    for (const group of document.querySelectorAll('#viagensContainer .repeatable-group')) {
         const inputs = group.querySelectorAll('input, textarea');
         const item = {};
         inputs.forEach(input => {
@@ -324,8 +344,11 @@ function collectFormData() {
                 item[key] = input.value;
             }
         });
-        if (item.destino) data.viagens.push(item);
-    });
+        if (item.destino) {
+            item.imagem = await getImageValue(group, `viagens[${group.dataset.idx}][imagem]`, `viagens[${group.dataset.idx}][imagemAtual]`);
+            data.viagens.push(item);
+        }
+    }
 
     return data;
 }
@@ -347,8 +370,8 @@ function populateForm(data) {
     setVal('cargo', dp.cargo);
     setVal('bio', dp.bio);
     setVal('sobreMim', dp.sobreMim);
-    setVal('fotoPerfil', dp.fotoPerfil);
-    setVal('fotoSobre', dp.fotoSobre);
+    document.getElementById('form-fotoPerfilAtual').value = dp.fotoPerfil || '';
+    document.getElementById('form-fotoSobreAtual').value = dp.fotoSobre || '';
     setVal('localizacao', dp.localizacao);
     setVal('nascimento', dp.nascimento);
     setVal('idiomas', dp.idiomas);
@@ -456,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // SUBMIT
-    document.getElementById('portfolioForm').addEventListener('submit', (e) => {
+    document.getElementById('portfolioForm').addEventListener('submit', async (e) => {
         e.preventDefault();
 
         const form = e.target;
@@ -466,7 +489,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const data = collectFormData();
+        const data = await collectFormData();
         localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 
         const btn = form.querySelector('button[type="submit"]');

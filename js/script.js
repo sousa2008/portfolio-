@@ -223,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = loadPortfolioData();
     if (data) {
         renderPortfolio(data);
+        document.getElementById('curriculoOriginal').style.display = 'none';
     } else {
         document.getElementById('btnEditar').style.display = 'flex';
     }
