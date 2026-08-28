@@ -45,58 +45,54 @@
 
         <!-- HERO -->
         <section id="home" class="hero-section" aria-labelledby="home-title">
-            <div class="container text-center">
-                <div id="heroPlaceholder">
-                    <div class="mb-4">
-                        <div class="img-placeholder foto-perfil-placeholder mx-auto">
-                            <img src="assets/profile-pic.png" alt="Foto de perfil de Lucas de Sousa e Silva" class="rounded-circle foto-perfil" onerror="this.parentElement.classList.add('no-image')">
+            <div class="container">
+                <div class="hero-container" id="heroPlaceholder">
+                    <!-- Coluna Esquerda: Conteúdo -->
+                    <div class="hero-content">
+                        <h1 id="home-title" class="hero-title">Lucas de Sousa e Silva</h1>
+                        <p class="hero-subtitle">Analista e Desenvolvedor de Sistemas</p>
+                        <p class="hero-description">
+                            Estudante de tecnologia com interesse em desenvolvimento web e soluções criativas.
+                            Sempre em busca de novos conhecimentos e desafios para crescer na área de TI.
+                        </p>
+                        
+                        <!-- Botões CTA -->
+                        <div class="hero-buttons">
+                            <a href="assets/curriculo-lucas.pdf" download class="btn-primary-cta">
+                                <i class="bi bi-download" aria-hidden="true"></i> Baixar Currículo
+                            </a>
+                            <a href="interatividade.html" class="btn-secondary-cta">
+                                <i class="bi bi-pencil-square" aria-hidden="true"></i> Preencher Portfólio
+                            </a>
+                        </div>
+                        
+                        <!-- Links de Redes Sociais -->
+                        <div class="hero-social">
+                            <a href="https://github.com/sousa2008" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="bi bi-github" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/lucas-s-5baa96330/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="bi bi-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="mailto:lucas.2008.sousa@gmail.com" class="social-link" aria-label="Enviar e-mail">
+                                <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Coluna Direita: Foto -->
+                    <div class="hero-image">
+                        <div class="img-placeholder foto-perfil-placeholder">
+                            <img src="assets/nova-foto-sem-background.png" alt="Foto de perfil de Lucas de Sousa e Silva" class="foto-perfil" onerror="this.parentElement.classList.add('no-image')">
                             <span class="img-fallback">Sem imagem selecionada</span>
                         </div>
                     </div>
-                    <h1 id="home-title">Lucas de Sousa e Silva</h1>
-                    <p class="lead">Analista e Desenvolvedor de Sistemas</p>
-                    <p class="mt-3 mb-4 px-lg-5">
-                        Estudante de tecnologia com interesse em desenvolvimento web e soluções criativas.
-                        Sempre em busca de novos conhecimentos e desafios para crescer na área de TI.
-                    </p>
-                    <div class="mt-4">
-                        <a href="interatividade.html" class="btn-preencher">
-                            <i class="bi bi-pencil-square" aria-hidden="true"></i>Criar seu próprio portfólio
-                        </a>
-                    </div>
-                    <div class="social-icons mt-4">
-                        <a href="https://github.com/sousa2008" class="fs-4 me-3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>
-                        <a href="https://www.linkedin.com/in/lucas-s-5baa96330/" class="fs-4 me-3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>
-                        <a href="mailto:lucas.2008.sousa@gmail.com" class="fs-4" aria-label="Enviar e-mail"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>
-                    </div>
-                    <div class="mt-4 pb-5" id="curriculoOriginal">
-                        <a href="assets/curriculo-lucas.pdf" download class="btn btn-success" style="color: #000; font-weight: 600;">
-                            <i class="bi bi-download me-2" aria-hidden="true"></i>Baixar curriculo
-                        </a>
-                    </div>
-                </div>
-
-                <div id="heroContent" style="display:none;">
-                    <div class="mb-4">
-                        <div class="img-placeholder foto-perfil-placeholder mx-auto">
-                            <img src="" alt="" class="rounded-circle foto-perfil" id="heroFoto" onerror="this.parentElement.classList.add('no-image')">
-                            <span class="img-fallback">Sem imagem selecionada</span>
-                        </div>
-                    </div>
-                    <h1 id="heroNome"></h1>
-                    <p class="lead" id="heroCargo"></p>
-                    <p class="mt-3 mb-4 px-lg-5" id="heroBio"></p>
-                    <div class="hero-links">
-                        <a href="#contato" class="btn-preencher me-2">Entrar em contato</a>
-                        <a href="#projetos" class="btn-preencher" style="background:transparent; border:1px solid rgba(255,255,255,0.3);">Ver projetos</a>
-                    </div>
-                    <div class="social-icons mt-4" id="heroSocial"></div>
                 </div>
             </div>
         </section>
 
         <!-- SOBRE MIM -->
-        <section id="sobre" class="section-padding" aria-labelledby="sobre-title">
+        <section id="sobre" class="section-padding section-dark" aria-labelledby="sobre-title">
             <div class="container">
                 <h2 id="sobre-title" class="section-title text-center mx-auto d-block">Sobre Mim</h2>
                 <div class="row align-items-center">
@@ -134,7 +130,7 @@
         </section>
 
         <!-- FORMAÇÃO -->
-        <section id="formacao" class="section-padding" style="background: var(--color-surface);" aria-labelledby="formacao-title">
+        <section id="formacao" class="section-padding section-light" aria-labelledby="formacao-title">
             <div class="container">
                 <h2 id="formacao-title" class="section-title text-center mx-auto d-block">Formação Acadêmica</h2>
                 <div class="row justify-content-center">
@@ -154,7 +150,7 @@
         </section>
 
         <!-- COMPETÊNCIAS -->
-        <section id="competencias" class="section-padding" aria-labelledby="competencias-title">
+        <section id="competencias" class="section-padding section-dark" aria-labelledby="competencias-title">
             <div class="container">
                 <h2 id="competencias-title" class="section-title text-center mx-auto d-block">Conhecimentos e Competências</h2>
                 <div class="row g-4" id="competenciasCards">
@@ -205,7 +201,7 @@
         </section>
 
         <!-- PROJETOS -->
-        <section id="projetos" class="section-padding" style="background: var(--color-surface);" aria-labelledby="projetos-title">
+        <section id="projetos" class="section-padding section-light" aria-labelledby="projetos-title">
             <div class="container">
                 <h2 id="projetos-title" class="section-title text-center mx-auto d-block">Projetos</h2>
                 <div class="row g-4" id="projetosGrid">
@@ -250,7 +246,7 @@
         </section>
 
         <!-- EXPERIÊNCIAS -->
-        <section id="experiencias" class="section-padding" aria-labelledby="experiencias-title">
+        <section id="experiencias" class="section-padding section-light" aria-labelledby="experiencias-title">
             <div class="container">
                 <h2 id="experiencias-title" class="section-title text-center mx-auto d-block">Experiências Relevantes</h2>
                 <div class="row justify-content-center">
@@ -277,7 +273,7 @@
         </section>
 
         <!-- HOBBIES -->
-        <section id="hobbies" class="section-padding" style="background: var(--color-surface);" aria-labelledby="hobbies-title">
+        <section id="hobbies" class="section-padding section-light" aria-labelledby="hobbies-title">
             <div class="container">
                 <h2 id="hobbies-title" class="section-title text-center mx-auto d-block">Hobbies e Lazer</h2>
                 <p class="text-center mb-5" id="hobbiesIntro" style="color: var(--color-text-muted);">Fora do ambiente profissional, gosto de...</p>
@@ -311,7 +307,7 @@
         </section>
 
         <!-- VIAGENS -->
-        <section id="viagens" class="section-padding" aria-labelledby="viagens-title">
+        <section id="viagens" class="section-padding section-dark" aria-labelledby="viagens-title">
             <div class="container">
                 <h2 id="viagens-title" class="section-title text-center mx-auto d-block">Viagens</h2>
                 <p class="text-center mb-5" id="viagensIntro" style="color: var(--color-text-muted);">Lugares que visitei e experiências que me marcaram...</p>
@@ -348,7 +344,7 @@
         </section>
 
         <!-- CONTATO -->
-        <section id="contato" class="section-padding" style="background: var(--color-surface);" aria-labelledby="contato-title">
+        <section id="contato" class="section-padding section-light" aria-labelledby="contato-title">
             <div class="container">
                 <h2 id="contato-title" class="section-title text-center mx-auto d-block">Contato</h2>
                 <div class="row g-5">

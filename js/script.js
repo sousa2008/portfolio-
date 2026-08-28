@@ -37,18 +37,24 @@ function renderPortfolio(data) {
     const comp = data.competencias || {};
 
     // --- HERO ---
-    document.getElementById('heroPlaceholder').style.display = 'none';
-    document.getElementById('heroContent').style.display = 'block';
-    document.getElementById('home').setAttribute('aria-labelledby', 'heroNome');
+    const hero = document.getElementById('home');
+    const heroFoto = document.querySelector('.foto-perfil');
+    const heroNome = document.getElementById('home-title');
+    const heroCargo = document.querySelector('.hero-subtitle');
+    const heroBio = document.querySelector('.hero-description');
 
-    const heroFoto = document.getElementById('heroFoto');
-    heroFoto.src = dp.fotoPerfil || '';
-    heroFoto.alt = dp.nome ? `Foto de perfil de ${dp.nome}` : 'Foto de perfil';
-    document.getElementById('heroNome').textContent = dp.nome || '';
-    document.getElementById('heroCargo').textContent = dp.cargo || '';
-    document.getElementById('heroBio').textContent = dp.bio || '';
+    hero.setAttribute('aria-labelledby', 'home-title');
+    if (heroFoto && dp.fotoPerfil) {
+        heroFoto.src = dp.fotoPerfil;
+    }
+    if (heroFoto) {
+        heroFoto.alt = dp.nome ? `Foto de perfil de ${dp.nome}` : 'Foto de perfil';
+    }
+    if (heroNome) heroNome.textContent = dp.nome || '';
+    if (heroCargo) heroCargo.textContent = dp.cargo || '';
+    if (heroBio) heroBio.textContent = dp.bio || '';
 
-    const heroSocial = document.getElementById('heroSocial');
+    const heroSocial = document.querySelector('.hero-social');
     let socialHtml = '';
     if (dp.github) socialHtml += `<a href="${escapeHtml(dp.github)}" class="text-light fs-4 me-3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>`;
     if (dp.linkedin) socialHtml += `<a href="${escapeHtml(dp.linkedin)}" class="text-light fs-4 me-3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>`;
@@ -223,7 +229,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const data = loadPortfolioData();
     if (data) {
         renderPortfolio(data);
-        document.getElementById('curriculoOriginal').style.display = 'none';
+        const curriculoOriginal = document.getElementById('curriculoOriginal');
+        if (curriculoOriginal) curriculoOriginal.style.display = 'none';
     } else {
         document.getElementById('btnEditar').style.display = 'flex';
     }
