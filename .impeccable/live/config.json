@@ -1,0 +1,6 @@
+{
+  "files": ["index.html", "formulario.html", "interatividade.html"],
+  "insertBefore": "</body>",
+  "commentSyntax": "html",
+  "cspChecked": true
+}

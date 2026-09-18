@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Registros da v2 do portfólio pessoal de Lucas de Sousa e Silva: problema, hipótese, evidência e decisão de cada aplicação do Impeccable.">
+    <title>Registros da v2 — Portfólio de Lucas</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128187;</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400..900&family=Spectral:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="documentation-page">
+    <a href="#registros" class="skip-link">Pular para os registros</a>
+
+    <header class="documentation-header">
+        <div class="container">
+            <h1>O que mudou, por que mudou e como sabemos.</h1>
+            <p>Registros das aplicações do Impeccable no portfólio, com problema, hipótese, evidência, análise e decisão.</p>
+        </div>
+    </header>
+
+    <nav class="documentation-nav" aria-label="Navegação da documentação">
+        <div class="container">
+            <a href="index.html"><i class="bi bi-arrow-left" aria-hidden="true"></i> Portfólio</a>
+            <a href="catalogo.html">Catálogo dos 23</a>
+            <a href="#metodo">Método</a>
+            <a href="#registros">Registros</a>
+            <a href="#proximos">Próximo ciclo</a>
+        </div>
+    </nav>
+
+    <main id="registros" class="documentation-main">
+        <div class="container">
+            <div id="metodo" class="documentation-intro">
+                <div class="documentation-stat"><strong>v1</strong><span>tag preservada</span></div>
+                <div class="documentation-stat"><strong>v2</strong><span>intervenções em andamento</span></div>
+                <div class="documentation-stat"><strong>24/32</strong><span>pontuação pós-mudanças</span></div>
+            </div>
+
+            <section class="documentation-section" aria-labelledby="metodo-title">
+                <h2 id="metodo-title">Como cada decisão foi registrada</h2>
+                <div class="application-entry">
+                    <p>Uma aplicação só é considerada válida quando parte de um problema observado, explicita uma hipótese, usa um comando com orientação complementar, apresenta resultado verificável e termina com uma decisão baseada na evidência. A execução isolada do comando não é contabilizada.</p>
+                </div>
+            </section>
+
+            <section class="documentation-section" aria-labelledby="registros-title">
+                <h2 id="registros-title">Registros da aplicação</h2>
+                <div class="application-list">
+                    <article class="application-entry">
+                        <h3>01 · impeccable init</h3>
+                        <div class="application-meta">
+                            <p><strong>Problema:</strong> não havia um registro durável do produto.</p>
+                            <p><strong>Hipótese:</strong> documentar público, propósito e restrições evitaria decisões inventadas.</p>
+                            <p><strong>Orientação:</strong> preservar HTML, CSS, JavaScript, Bootstrap e localStorage.</p>
+                            <p><strong>Resultado:</strong> criação de PRODUCT.md.</p>
+                            <p><strong>Evidência:</strong> fatos confirmados e comentário de schema presentes no arquivo.</p>
+                            <p><strong>Decisão:</strong> manter o escopo sem backend ou banco de dados.</p>
+                        </div>
+                    </article>
+
+                    <article class="application-entry">
+                        <h3>02 · impeccable document</h3>
+                        <div class="application-meta">
+                            <p><strong>Problema:</strong> a implementação tinha identidade, mas não estava formalmente registrada.</p>
+                            <p><strong>Hipótese:</strong> um DESIGN.md reduziria deriva entre páginas e agentes.</p>
+                            <p><strong>Orientação:</strong> extrair tokens reais do CSS, sem inventar um novo mundo visual.</p>
+                            <p><strong>Resultado:</strong> documentação de cores, tipografia, layout, formas e componentes.</p>
+                            <p><strong>Evidência:</strong> tokens correspondem ao CSS existente.</p>
+                            <p><strong>Decisão:</strong> usar o sistema atual como referência da v1.</p>
+                        </div>
+                    </article>
+
+                    <article class="application-entry">
+                        <h3>03 · impeccable critique</h3>
+                        <div class="application-meta">
+                            <p><strong>Problema:</strong> home extensa, fluxo administrativo misturado e visual repetitivo.</p>
+                            <p><strong>Hipótese:</strong> priorizar hierarquia, acessibilidade e especificidade produziria uma v2 comprovadamente melhor.</p>
+                            <p><strong>Orientação:</strong> avaliar home, formulário e interatividade sem inventar conteúdo.</p>
+                            <p><strong>Resultado:</strong> diagnóstico com pontuação inicial de 22/32.</p>
+                            <p><strong>Evidência:</strong> achados side-tab, low-contrast, cramped-padding, flat-type-hierarchy e dark-glow.</p>
+                            <p><strong>Decisão:</strong> começar por contraste, layout e hierarquia.</p>
+                        </div>
+                    </article>
+
+                    <article class="application-entry">
+                        <h3>04 · impeccable audit</h3>
+                        <div class="application-meta">
+                            <p><strong>Problema:</strong> estados de ação, placeholders e foco tinham legibilidade inconsistente.</p>
+                            <p><strong>Hipótese:</strong> tokens de hover e foco global corrigiriam os principais riscos sem redesign.</p>
+                            <p><strong>Orientação:</strong> manter a paleta e atingir contraste mais seguro nos controles.</p>
+                            <p><strong>Resultado:</strong> novos tokens de hover, placeholders mais legíveis e foco visível.</p>
+                            <p><strong>Evidência:</strong> os casos mais graves de texto escuro sobre verde desapareceram.</p>
+                            <p><strong>Decisão:</strong> preservar a composição e deixar o estado Bootstrap residual para investigação posterior.</p>
+                        </div>
+                    </article>
+
+                    <article class="application-entry">
+                        <h3>05 · impeccable layout</h3>
+                        <div class="application-meta">
+                            <p><strong>Problema:</strong> todas as seções tinham peso espacial parecido.</p>
+                            <p><strong>Hipótese:</strong> projetos e contato deveriam ser picos da leitura; hobbies e viagens, apoio.</p>
+                            <p><strong>Orientação:</strong> manter ordem do conteúdo, navegação e responsividade.</p>
+                            <p><strong>Resultado:</strong> mais respiro em projetos/contato, compactação de apoio e cards mais confortáveis.</p>
+                            <p><strong>Evidência:</strong> detector sem novos alertas estruturais.</p>
+                            <p><strong>Decisão:</strong> manter a hierarquia e separar o formulário para outro ciclo.</p>
+                        </div>
+                    </article>
+
+                    <article class="application-entry">
+                        <h3>06 · impeccable typeset</h3>
+                        <div class="application-meta">
+                            <p><strong>Problema:</strong> títulos, corpo e metadados tinham diferença insuficiente.</p>
+                            <p><strong>Hipótese:</strong> uma escala tipográfica curta criaria voz sem trocar a fonte.</p>
+                            <p><strong>Orientação:</strong> preservar Inter, navy/verde e medidas responsivas.</p>
+                            <p><strong>Resultado:</strong> display responsivo, cargo com tracking, cards e meta diferenciados.</p>
+                            <p><strong>Evidência:</strong> alertas de all-caps-body e wide-tracking eliminados.</p>
+                            <p><strong>Decisão:</strong> manter Inter por consistência nesta versão.</p>
+                        </div>
+                    </article>
+
+                    <article class="application-entry">
+                        <h3>07 · impeccable bolder</h3>
+                        <div class="application-meta">
+                            <p><strong>Problema:</strong> o portfólio ainda se aproximava de templates comuns.</p>
+                            <p><strong>Hipótese:</strong> um único gesto composicional forte seria mais memorável que vários efeitos.</p>
+                            <p><strong>Orientação:</strong> destacar hero e primeiro projeto sem exagero.</p>
+                            <p><strong>Resultado:</strong> moldura fina rotacionada no hero e assimetria editorial no primeiro projeto.</p>
+                            <p><strong>Evidência:</strong> o detector rejeitou a borda superior excessiva, que foi removida.</p>
+                            <p><strong>Decisão:</strong> manter apenas a moldura e o deslocamento sutil.</p>
+                        </div>
+                    </article>
+
+                    <article class="application-entry">
+                        <h3>08 · impeccable polish</h3>
+                        <div class="application-meta">
+                            <p><strong>Problema:</strong> glow, estilos inline, cor isolada e barras laterais criavam ruído de template.</p>
+                            <p><strong>Hipótese:</strong> tokens compartilhados e elevação neutra deixariam o sistema mais maduro.</p>
+                            <p><strong>Orientação:</strong> não adicionar ornamentos; limpar a implementação atual.</p>
+                            <p><strong>Resultado:</strong> estilos inline removidos, sombras normalizadas, barras laterais retiradas e ícones centralizados.</p>
+                            <p><strong>Evidência:</strong> busca sem style inline, #eab308 ou border-left de 3px.</p>
+                            <p><strong>Decisão:</strong> encerrar o polimento antes da nova crítica.</p>
+                        </div>
+                    </article>
+
+                    <article class="application-entry">
+                        <h3>09 · impeccable critique pós-mudanças</h3>
+                        <div class="application-meta">
+                            <p><strong>Problema:</strong> era necessário comprovar se a v2 realmente melhorou.</p>
+                            <p><strong>Hipótese:</strong> uma nova avaliação mostraria ganhos e pendências sem depender de impressão.</p>
+                            <p><strong>Orientação:</strong> comparar com a crítica de 22/32 e considerar todas as páginas.</p>
+                            <p><strong>Resultado:</strong> pontuação de 24/32.</p>
+                            <p><strong>Evidência:</strong> side-tab, dark-glow e border-accent-on-rounded desapareceram.</p>
+                            <p><strong>Decisão:</strong> priorizar agora fluxo administrativo, formulário ou contraste Bootstrap.</p>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <section id="proximos" class="documentation-section" aria-labelledby="proximos-title">
+                <h2 id="proximos-title">Próximo ciclo</h2>
+                <div class="application-entry">
+                    <p><strong>Pendências atuais:</strong> simplificar a etapa intermediária de personalização, melhorar a hierarquia do formulário e investigar o hover Bootstrap com contraste de 2.5:1. A próxima intervenção deverá registrar novamente problema, hipótese, comando, evidência e decisão.</p>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="documentation-footer">
+        <div class="container">
+            <a href="index.html">Voltar ao portfólio</a>
+            <a href="catalogo.html">Ver catálogo dos 23 comandos</a>
+        </div>
+    </footer>
+</body>
+</html>
