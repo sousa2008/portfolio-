@@ -1,0 +1,409 @@
+/* ============================================================
+   OVERDRIVE — "Cidade-Código" (index.html)
+   A página é um sistema vivo: a cidade se energiza sob o scroll.
+   Degrada com elegância: sem estas regras, o portfólio continua inteiro.
+   ============================================================ */
+
+/* ===== Máquina Viva: faixa de boot (primeira dobra livre) ===== */
+.od-boot {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2000;
+    align-items: center;
+    padding: 0.45rem 1rem 0;
+    background: rgba(var(--color-bg-dark-rgb), 0.94);
+    border-bottom: 1px solid rgba(var(--color-accent-rgb), 0.3);
+    cursor: pointer;
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.32s ease, transform 0.4s var(--ease-out-expo);
+}
+
+html.od-ready .od-boot {
+    display: flex;
+}
+
+.od-boot--exit {
+    opacity: 0;
+    transform: translateY(-14px);
+    pointer-events: none;
+}
+
+.od-boot__inner {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    min-width: 0;
+    max-width: 100%;
+    padding-bottom: 0.4rem;
+    overflow: hidden;
+}
+
+.od-boot__dot {
+    flex: 0 0 auto;
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 50%;
+    background: var(--color-accent-primary);
+}
+
+.od-boot__body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+    min-width: 0;
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    line-height: 1.4;
+    color: var(--color-text-secondary);
+}
+
+.od-boot__line {
+    margin: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: 1.4;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.od-boot__line--dim {
+    color: var(--color-text-muted);
+}
+
+.od-boot__bar {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 2px;
+    background: rgba(var(--color-slate-rgb), 0.16);
+}
+
+.od-boot__bar span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform-origin: left;
+    transform: scaleX(0);
+    background: linear-gradient(90deg, var(--color-accent-deep), var(--color-accent-primary), var(--color-accent-bright));
+}
+
+/* ===== Filme de Scroll: lâmpada do cursor no hero ===== */
+.od-hero-lamp {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(430px circle at var(--od-sx, 50%) var(--od-sy, 55%), rgba(var(--color-accent-rgb), 0.13), transparent 66%);
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+}
+
+.hero-section:hover .od-hero-lamp,
+.hero-section.od-ambient .od-hero-lamp {
+    opacity: 1;
+}
+
+/* ===== Cidade-Código: planta urbana atrás do hero ===== */
+.hero-section {
+    background:
+        linear-gradient(rgba(var(--color-slate-rgb), 0.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(var(--color-slate-rgb), 0.055) 1px, transparent 1px),
+        var(--color-bg-dark);
+    background-size: 54px 54px, 54px 54px, auto;
+}
+
+@media (max-width: 991.98px) {
+    .hero-section {
+        background:
+            linear-gradient(rgba(var(--color-slate-rgb), 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(var(--color-slate-rgb), 0.04) 1px, transparent 1px),
+            var(--color-bg-dark);
+        background-size: 44px 44px, 44px 44px, auto;
+    }
+}
+
+/* ===== Cidade-Código: o nome desmonta em cacos de sinal ===== */
+.hero-title {
+    position: relative;
+}
+
+.od-ghost {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+    font: inherit;
+    color: var(--color-white);
+    text-wrap: balance;
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+}
+
+.od-ghost .od-g {
+    display: inline-block;
+    opacity: 0;
+    will-change: transform, opacity;
+}
+
+/* ===== Cidade-Código: títulos de seção entram online ===== */
+.od-title {
+    position: relative;
+}
+
+.od-title .od-tchar {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(12px);
+    transition:
+        opacity 0.55s ease var(--td, 0s),
+        transform 0.7s var(--ease-out-expo) var(--td, 0s);
+}
+
+.od-title.od-title--on .od-tchar {
+    opacity: 1;
+    transform: none;
+}
+
+.od-title--split::after {
+    transform-origin: left center;
+    transform: scaleX(0);
+    transition: transform 0.85s var(--ease-out-expo) 0.35s;
+}
+
+.od-title--split.od-title--on::after {
+    transform: scaleX(1);
+}
+
+/* ===== Cidade-Código: a linha de vida da formação carrega ===== */
+.od-charge {
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    bottom: 8px;
+    width: 3px;
+    transform: scaleY(0);
+    transform-origin: top;
+    background: linear-gradient(180deg, var(--color-accent-bright), var(--color-accent-primary));
+    border-radius: var(--radius-sm);
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+    pointer-events: none;
+}
+
+/* ===== Cidade-Código: retrato holográfico (cursor) ===== */
+@media (prefers-reduced-motion: no-preference) {
+    .hero-image.od-tilt {
+        perspective: 1000px;
+    }
+
+    .hero-image.od-tilt .foto-perfil-placeholder {
+        transition: transform 0.5s var(--ease-out-expo);
+        will-change: transform;
+    }
+}
+
+/* ===== Cidade-Código: telemetria do sistema (desktop) ===== */
+.od-telemetry {
+    position: fixed;
+    right: 1.15rem;
+    bottom: 1.15rem;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.5rem 0.8rem;
+    border: 1px solid rgba(var(--color-accent-rgb), 0.25);
+    border-radius: var(--radius-sm);
+    background: rgba(var(--color-bg-dark-rgb), 0.82);
+    backdrop-filter: blur(8px);
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    pointer-events: none;
+    user-select: none;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s ease, transform 0.5s var(--ease-out-expo);
+}
+
+.od-telemetry.is-on {
+    opacity: 1;
+    transform: none;
+}
+
+.od-telemetry__dot {
+    flex: 0 0 auto;
+    width: 0.45rem;
+    height: 0.45rem;
+    border-radius: 50%;
+    background: var(--color-accent-primary);
+}
+
+/* ===== Filme de Scroll: trilho de progresso na navbar ===== */
+.od-progress {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: rgba(var(--color-slate-rgb), 0.14);
+    pointer-events: none;
+}
+
+.od-progress span {
+    display: block;
+    height: 100%;
+    width: 100%;
+    transform-origin: left;
+    transform: scaleX(0);
+    background: linear-gradient(90deg, var(--color-accent-deep), var(--color-accent-primary), var(--color-accent-bright));
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* ===== Revelação: uma linguagem, mais física ===== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(22px) scale(0.99);
+    transition: opacity 0.7s var(--ease-out-expo), transform 0.7s var(--ease-out-expo);
+    transition-delay: var(--od-delay, 0s);
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: none;
+    transition: opacity 0.35s ease, transform 0.35s var(--ease-out-expo), box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+/* ===== Reduced motion: nada obrigatório ===== */
+@media (prefers-reduced-motion: reduce) {
+    html.od-ready .od-boot {
+        display: none;
+    }
+
+    .od-hero-lamp,
+    .od-progress span,
+    .od-telemetry {
+        transition: none;
+    }
+
+    .od-ghost {
+        display: none;
+    }
+
+    .fade-in {
+        transition: none;
+    }
+}
+
+/* ===== Ajustes finos de superfície ===== */
+a {
+    text-underline-offset: 0.22em;
+}
+
+/* ============================================================
+   OVERDRIVE II — "A cidade acorda" (onda de energia no scroll)
+   A mesma onda que acende o campo também varre o hero e faz o
+   retrato dissolver quando a primeira dobra sai do viewport.
+   Tudo degrada com elegância e respeita prefers-reduced-motion.
+   ============================================================ */
+
+/* ===== Retrato holográfico: dissolve em linhas de varredura ===== */
+.od-rip {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: min(100%, 420px);
+    aspect-ratio: 1;
+    transform: translate(-50%, -50%);
+    border-radius: var(--radius);
+    z-index: 2;
+    pointer-events: none;
+    user-select: none;
+    background:
+        repeating-linear-gradient(180deg,
+            rgba(var(--color-accent-rgb), 0) 0 3px,
+            rgba(var(--color-accent-bright-rgb), 0.16) 3px 4px,
+            rgba(var(--color-bg-light-rgb), 0.12) 4px 7px),
+        repeating-linear-gradient(90deg,
+            rgba(var(--color-bg-dark-rgb), 0) 0 2px,
+            rgba(var(--color-accent-rgb), 0.06) 2px 3px);
+    mix-blend-mode: screen;
+    opacity: 0;
+}
+
+.hero-image:has(.no-image) .od-rip {
+    display: none;
+}
+
+@media (max-width: 767.98px) {
+    .od-rip {
+        width: min(100%, 360px);
+    }
+}
+
+@media (max-width: 575.98px) {
+    .od-rip {
+        width: min(100%, 300px);
+    }
+}
+
+/* ===== Power-on: a onda acende cada bloco ao entrar ===== */
+.fade-in {
+    position: relative;
+}
+
+.fade-in::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    border-radius: inherit;
+    pointer-events: none;
+    background: linear-gradient(100deg,
+        transparent 28%,
+        rgba(var(--color-accent-rgb), 0.13) 44%,
+        rgba(var(--color-accent-bright-rgb), 0.2) 50%,
+        rgba(var(--color-accent-rgb), 0.13) 56%,
+        transparent 72%);
+    background-size: 260% 100%;
+    background-position: 130% 0;
+    opacity: 0;
+}
+
+.fade-in.visible.od-swept::after {
+    opacity: 1;
+    animation: od-sweep 1.05s var(--ease-out-expo) var(--od-wave-delay, 0s) forwards;
+}
+
+@keyframes od-sweep {
+    0% {
+        background-position: 130% 0;
+        opacity: 1;
+    }
+    72% {
+        opacity: 1;
+    }
+    100% {
+        background-position: -130% 0;
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .od-rip {
+        display: none;
+    }
+
+    .fade-in::after {
+        display: none;
+    }
+}

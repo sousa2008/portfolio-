@@ -38,7 +38,7 @@
             <div id="metodo" class="documentation-intro">
                 <div class="documentation-stat"><strong>v1</strong><span>tag preservada</span></div>
                 <div class="documentation-stat"><strong>v2</strong><span>intervenções em andamento</span></div>
-                <div class="documentation-stat"><strong>24/32</strong><span>pontuação pós-mudanças</span></div>
+                <div class="documentation-stat"><strong>24/32 · 16/20</strong><span>crítica e audit pós-mudanças</span></div>
             </div>
 
             <section class="documentation-section" aria-labelledby="metodo-title">
@@ -156,6 +156,18 @@
                             <p><strong>Resultado:</strong> pontuação de 24/32.</p>
                             <p><strong>Evidência:</strong> side-tab, dark-glow e border-accent-on-rounded desapareceram.</p>
                             <p><strong>Decisão:</strong> priorizar agora fluxo administrativo, formulário ou contraste Bootstrap.</p>
+                        </div>
+                    </article>
+
+                    <article class="application-entry">
+                        <h3>10 · impeccable audit</h3>
+                        <div class="application-meta">
+                            <p><strong>Problema:</strong> era necessário avaliar tecnicamente a página de registros após o ciclo da v2 e antes do novo commit.</p>
+                            <p><strong>Hipótese:</strong> um audit com o detector mecânico separaria pendências reais de falsos positivos herdados do Bootstrap.</p>
+                            <p><strong>Orientação:</strong> cobrir acessibilidade, performance, theming, responsividade e integridade sem corrigir nesta passada.</p>
+                            <p><strong>Resultado:</strong> score de 16/20 (Good), com contraste, landmarks, responsividade e tokens aprovados nas cinco dimensões.</p>
+                            <p><strong>Evidência:</strong> o único achado do detector foi o hover de 2.5:1 (branco sobre #10b981), verificado como herança do Bootstrap sem botões nesta página.</p>
+                            <p><strong>Decisão:</strong> registrar o audit e isolar o contraste de hover do Bootstrap como pendência explícita do próximo ciclo.</p>
                         </div>
                     </article>
                 </div>

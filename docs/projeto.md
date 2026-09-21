@@ -28,7 +28,7 @@ Um recrutador pode ver todos os meus projetos apresentados de forma harmoniosa e
 
 ## Proposta visual
 
-Visual profissional e limpo, com alternância entre áreas escuras (navbar e seção inicial) e seções claras, cor primária verde esmeralda, tipografia Inter, cards com cantos arredondados, badges para tecnologias e animações discretas de entrada ao rolar a página. O layout é responsivo, adaptando-se a computadores e dispositivos móveis.
+Visual profissional e limpo, com alternância entre áreas escuras (navbar e seção inicial) e seções claras, cor primária verde esmeralda (`#10b981`, com família de ação `#047857`/`#065f46`), tipografia Onest para leitura e Spectral para os momentos editoriais, cards com cantos arredondados, badges semânticos por token (verde/azul/violeta) para tecnologias, ferramentas e soft skills, e animações discretas de entrada ao rolar a página. O sistema visual é descrito por tokens em `css/style.css` e documentado no `DESIGN.md`. O layout é responsivo, adaptando-se a computadores e dispositivos móveis.
 
 ## Ideia criativa — portfólio como molde
 

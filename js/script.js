@@ -42,11 +42,11 @@ function makeBadges(csv, cls) {
         .map(s => `<span class="badge ${cls} m-1">${escapeHtml(s)}</span>`).join('');
 }
 
-const BADGE_LINGUAGENS = 'bg-primary bg-opacity-10 text-primary';
-const BADGE_FERRAMENTAS = 'bg-secondary bg-opacity-10 text-secondary';
-const BADGE_SOFTSKILLS = 'bg-success bg-opacity-10 text-success';
-const BADGE_PROJETOS = 'bg-primary bg-opacity-10 text-primary';
-const BADGE_EXP_COMPETENCIAS = 'bg-secondary bg-opacity-10 text-secondary';
+const BADGE_LINGUAGENS = 'badge-accent';
+const BADGE_FERRAMENTAS = 'badge-info';
+const BADGE_SOFTSKILLS = 'badge-tertiary';
+const BADGE_PROJETOS = 'badge-accent';
+const BADGE_EXP_COMPETENCIAS = 'badge-info';
 
 // ===== CARREGAR DADOS E POPULAR PÁGINA =====
 function loadPortfolioData() {
@@ -90,9 +90,9 @@ function renderPortfolio(data) {
     const gh = safeUrl(dp.github);
     const li = safeUrl(dp.linkedin);
     const em = safeEmail(dp.email);
-    if (gh) socialHtml += `<a href="${escapeHtml(gh)}" class="text-light fs-4 me-3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github"></i></a>`;
-    if (li) socialHtml += `<a href="${escapeHtml(li)}" class="text-light fs-4 me-3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>`;
-    if (em) socialHtml += `<a href="mailto:${escapeHtml(em)}" class="text-light fs-4" aria-label="E-mail"><i class="bi bi-envelope-fill"></i></a>`;
+    if (gh) socialHtml += `<a href="${escapeHtml(gh)}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github" aria-hidden="true"></i></a>`;
+    if (li) socialHtml += `<a href="${escapeHtml(li)}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin" aria-hidden="true"></i></a>`;
+    if (em) socialHtml += `<a href="mailto:${escapeHtml(em)}" class="social-link" aria-label="E-mail"><i class="bi bi-envelope-fill" aria-hidden="true"></i></a>`;
     heroSocial.innerHTML = socialHtml;
 
     // --- SOBRE MIM ---
@@ -111,13 +111,13 @@ function renderPortfolio(data) {
 
     const safeEmailDisplay = em || '[seu@email.com]';
     document.getElementById('sobreDados1').innerHTML = `
-        <li class="mb-2"><i class="bi bi-person-fill me-2 text-primary" aria-hidden="true"></i><strong>Nome:</strong> ${escapeHtml(dp.nome) || '—'}</li>
-        <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-primary" aria-hidden="true"></i><strong>Localização:</strong> ${escapeHtml(dp.localizacao) || '—'}</li>
-        <li class="mb-2"><i class="bi bi-calendar-fill me-2 text-primary" aria-hidden="true"></i><strong>Nascimento:</strong> ${escapeHtml(dp.nascimento) || '—'}</li>`;
+        <li class="mb-2"><i class="bi bi-person-fill me-2 text-accent" aria-hidden="true"></i><strong>Nome:</strong> ${escapeHtml(dp.nome) || '—'}</li>
+        <li class="mb-2"><i class="bi bi-geo-alt-fill me-2 text-accent" aria-hidden="true"></i><strong>Localização:</strong> ${escapeHtml(dp.localizacao) || '—'}</li>
+        <li class="mb-2"><i class="bi bi-calendar-fill me-2 text-accent" aria-hidden="true"></i><strong>Nascimento:</strong> ${escapeHtml(dp.nascimento) || '—'}</li>`;
     document.getElementById('sobreDados2').innerHTML = `
-        <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-primary" aria-hidden="true"></i><strong>E-mail:</strong> ${escapeHtml(safeEmailDisplay)}</li>
-        <li class="mb-2"><i class="bi bi-phone-fill me-2 text-primary" aria-hidden="true"></i><strong>Telefone:</strong> ${escapeHtml(dp.telefone) || '—'}</li>
-        <li class="mb-2"><i class="bi bi-translate me-2 text-primary" aria-hidden="true"></i><strong>Idiomas:</strong> ${escapeHtml(dp.idiomas) || '—'}</li>`;
+        <li class="mb-2"><i class="bi bi-envelope-fill me-2 text-accent" aria-hidden="true"></i><strong>E-mail:</strong> ${escapeHtml(safeEmailDisplay)}</li>
+        <li class="mb-2"><i class="bi bi-phone-fill me-2 text-accent" aria-hidden="true"></i><strong>Telefone:</strong> ${escapeHtml(dp.telefone) || '—'}</li>
+        <li class="mb-2"><i class="bi bi-translate me-2 text-accent" aria-hidden="true"></i><strong>Idiomas:</strong> ${escapeHtml(dp.idiomas) || '—'}</li>`;
 
     // --- FORMAÇÃO ---
     const formacaoEl = document.getElementById('formacaoTimeline');
@@ -128,7 +128,7 @@ function renderPortfolio(data) {
                 <div class="timeline-dot"></div>
                 <div class="timeline-content">
                     <h3>${escapeHtml(f.curso)}</h3>
-                    <span class="text-muted">${escapeHtml(f.instituicao)}${f.periodo ? ' — ' + escapeHtml(f.periodo) : ''}</span>
+                    <span class="text-soft">${escapeHtml(f.instituicao)}${f.periodo ? ' — ' + escapeHtml(f.periodo) : ''}</span>
                     ${f.descricao ? `<p class="mt-2">${escapeHtml(f.descricao)}</p>` : ''}
                 </div>
             </div>`).join('');
@@ -177,8 +177,6 @@ function renderPortfolio(data) {
         }).join('');
     } else {
         hideSectionAndNav('projetos');
-        const heroVerProjetos = document.querySelector('.hero-links a[href="#projetos"]');
-        if (heroVerProjetos) heroVerProjetos.style.display = 'none';
     }
 
     // --- EXPERIÊNCIAS ---
@@ -186,13 +184,13 @@ function renderPortfolio(data) {
     expLista.innerHTML = '';
     if (data.experiencias && data.experiencias.length) {
         expLista.innerHTML = data.experiencias.map(e => `
-            <div class="experience-item mb-4 p-4 rounded shadow-sm">
+            <div class="experience-item mb-4 rounded shadow-sm">
                 <div class="d-flex justify-content-between align-items-start flex-wrap">
                     <div>
                         <h3>${escapeHtml(e.cargo)}</h3>
-                        <h4 class="text-primary">${escapeHtml(e.empresa)}</h4>
+                        <h4 class="text-accent">${escapeHtml(e.empresa)}</h4>
                     </div>
-                    ${e.periodo ? `<span class="badge bg-primary bg-opacity-10 text-primary">${escapeHtml(e.periodo)}</span>` : ''}
+                    ${e.periodo ? `<span class="badge badge-accent">${escapeHtml(e.periodo)}</span>` : ''}
                 </div>
                 ${e.descricao ? `<p class="mt-3 mb-1">${escapeHtml(e.descricao)}</p>` : ''}
                 ${e.competencias ? `<div class="skill-tags mt-2">${makeBadges(e.competencias, BADGE_EXP_COMPETENCIAS)}</div>` : ''}
@@ -230,7 +228,7 @@ function renderPortfolio(data) {
                     ${imgHtml}
                     <div class="card-body">
                         <h3 class="card-title">${escapeHtml(v.destino)}</h3>
-                        ${v.periodo ? `<span class="text-muted">${escapeHtml(v.periodo)}</span>` : ''}
+                        ${v.periodo ? `<span class="text-soft">${escapeHtml(v.periodo)}</span>` : ''}
                         ${v.descricao ? `<p class="card-text mt-2">${escapeHtml(v.descricao)}</p>` : ''}
                     </div>
                 </div>
@@ -261,9 +259,9 @@ function renderPortfolio(data) {
     // --- FOOTER ---
     const footerSocial = document.getElementById('footerSocial');
     let fSocial = '';
-    if (gh) fSocial += `<a href="${escapeHtml(gh)}" class="text-light me-3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github fs-5"></i></a>`;
-    if (li) fSocial += `<a href="${escapeHtml(li)}" class="text-light me-3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>`;
-    if (em) fSocial += `<a href="mailto:${escapeHtml(em)}" class="text-light" aria-label="Enviar e-mail"><i class="bi bi-envelope-fill fs-5"></i></a>`;
+    if (gh) fSocial += `<a href="${escapeHtml(gh)}" class="text-on-dark me-3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github fs-5"></i></a>`;
+    if (li) fSocial += `<a href="${escapeHtml(li)}" class="text-on-dark me-3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5"></i></a>`;
+    if (em) fSocial += `<a href="mailto:${escapeHtml(em)}" class="text-on-dark" aria-label="Enviar e-mail"><i class="bi bi-envelope-fill fs-5"></i></a>`;
     footerSocial.innerHTML = fSocial;
 
     document.getElementById('footerNome').textContent = dp.nome || '';

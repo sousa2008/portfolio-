@@ -1,0 +1,446 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR" class="od-ready"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portf├│lio pessoal de Lucas de Sousa e Silva ÔÇö Analista e Desenvolvedor de Sistemas. Projetos, forma├º├úo, experi├¬ncias e contato.">
+    <title>Portf├│lio Pessoal ÔÇö Lucas de Sousa e Silva</title>
+    <link rel="icon" href="data:image/svg+xml,&lt;svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'&gt;&lt;text y='.9em' font-size='90'&gt;­ƒÆ╗&lt;/text&gt;&lt;/svg&gt;">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400..900&amp;family=Spectral:ital,wght@0,400;1,400&amp;display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/overdrive.css">
+</head>
+<body>
+
+    <canvas id="odField" class="od-field" aria-hidden="true" width="762" height="484"></canvas>
+
+    
+
+    <a href="#main-content" class="skip-link">Pular para o conte├║do principal</a>
+
+    <div id="demoModeFlag" class="demo-mode-flag d-none" role="note">
+        <i class="bi bi-info-circle" aria-hidden="true"></i>
+        <div class="demo-mode-flag-text">
+            <strong>Modo demonstra├º├úo</strong>
+            <span>Voc├¬ est├í vendo a vers├úo com os seus dados, salva s├│ neste navegador. O portf├│lio do Lucas continua publicado para os demais visitantes.</span>
+        </div>
+        <button type="button" class="demo-mode-flag-action" id="demoModeRestore">Ver original</button>
+    </div>
+
+    <div class="od-telemetry d-none d-lg-flex" role="presentation" aria-hidden="true">
+        <span class="od-telemetry__dot" aria-hidden="true"></span>
+        <span id="odTelemetryText">In├¡cio ┬À 0%</span>
+    </div>
+
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar" aria-label="Menu de navega├º├úo principal">
+        <div class="od-progress" aria-hidden="true"><span id="odProgressBar" style="transform: scaleX(0);"></span></div>
+        <div class="container">
+            <a class="navbar-brand" href="#home">Portf├│lio</a>
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Abrir menu de navega├º├úo">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto" role="list">
+                    <li class="nav-item"><a class="nav-link" href="#home">In├¡cio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formacao">Forma├º├úo</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#competencias">Compet├¬ncias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projetos">Projetos</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#experiencias">Experi├¬ncias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#hobbies">Hobbies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#viagens">Viagens</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+
+        <!-- HERO -->
+        <section id="home" class="hero-section od-ambient" aria-labelledby="home-title">
+            <div class="container">
+                <div class="hero-container" id="heroPlaceholder">
+                    <!-- Coluna Esquerda: Conte├║do -->
+                    <div class="hero-content">
+                        <h1 id="home-title" class="hero-title" data-od-ghost="1">Lucas de Sousa e Silva<span class="od-ghost" aria-hidden="true" style="opacity: 0;"><span class="od-g" style="opacity: 0; transform: none;">L</span><span class="od-g" style="opacity: 0; transform: none;">u</span><span class="od-g" style="opacity: 0; transform: none;">c</span><span class="od-g" style="opacity: 0; transform: none;">a</span><span class="od-g" style="opacity: 0; transform: none;">s</span><span class="od-g" style="white-space: pre; opacity: 0; transform: none;"> </span><span class="od-g" style="opacity: 0; transform: none;">d</span><span class="od-g" style="opacity: 0; transform: none;">e</span><span class="od-g" style="white-space: pre; opacity: 0; transform: none;"> </span><span class="od-g" style="opacity: 0; transform: none;">S</span><span class="od-g" style="opacity: 0; transform: none;">o</span><span class="od-g" style="opacity: 0; transform: none;">u</span><span class="od-g" style="opacity: 0; transform: none;">s</span><span class="od-g" style="opacity: 0; transform: none;">a</span><span class="od-g" style="white-space: pre; opacity: 0; transform: none;"> </span><span class="od-g" style="opacity: 0; transform: none;">e</span><span class="od-g" style="white-space: pre; opacity: 0; transform: none;"> </span><span class="od-g" style="opacity: 0; transform: none;">S</span><span class="od-g" style="opacity: 0; transform: none;">i</span><span class="od-g" style="opacity: 0; transform: none;">l</span><span class="od-g" style="opacity: 0; transform: none;">v</span><span class="od-g" style="opacity: 0; transform: none;">a</span></span></h1>
+                        <p class="hero-subtitle">Analista e Desenvolvedor de Sistemas</p>
+                        <p class="hero-description">
+                            Estudante de tecnologia com interesse em desenvolvimento web e solu├º├Áes criativas.
+                            Sempre em busca de novos conhecimentos e desafios para crescer na ├írea de TI.
+                        </p>
+                        
+                        <!-- Bot├Áes CTA -->
+                        <div class="hero-buttons">
+                            <a href="assets/curriculo-lucas.pdf" download="" class="btn-primary-cta">
+                                <i class="bi bi-download" aria-hidden="true"></i> Baixar Curr├¡culo
+                            </a>
+                            <a href="interatividade.html" class="btn-secondary-cta">
+                                <i class="bi bi-pencil-square" aria-hidden="true"></i> Simular meu portf├│lio
+                            </a>
+                        </div>
+                        
+                        <!-- Links de Redes Sociais -->
+                        <div class="hero-social">
+                            <a href="https://github.com/sousa2008" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                                <i class="bi bi-github" aria-hidden="true"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/lucas-s-5baa96330/" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                                <i class="bi bi-linkedin" aria-hidden="true"></i>
+                            </a>
+                            <a href="mailto:lucas.2008.sousa@gmail.com" class="social-link" aria-label="Enviar e-mail">
+                                <i class="bi bi-envelope-fill" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Coluna Direita: Foto -->
+                    <div class="hero-image od-tilt">
+                        <div class="img-placeholder foto-perfil-placeholder">
+                            <img src="assets/nova-foto-sem-background.png" alt="Foto de perfil de Lucas de Sousa e Silva" class="foto-perfil" onerror="this.parentElement.classList.add('no-image')" style="will-change: transform;">
+                            <span class="img-fallback">Sem imagem selecionada</span>
+                        </div>
+</div>
+            </div>
+        </div>
+        <div class="od-hero-lamp" aria-hidden="true"></div>
+    </section>
+
+        <!-- SOBRE MIM -->
+        <section id="sobre" class="section-padding section-dark" aria-labelledby="sobre-title">
+            <div class="container">
+                <h2 id="sobre-title" class="section-title text-center mx-auto d-block od-title--split"><span class="od-tchar" style="--td: 0ms;">S</span><span class="od-tchar" style="--td: 38ms;">o</span><span class="od-tchar" style="--td: 76ms;">b</span><span class="od-tchar" style="--td: 114ms;">r</span><span class="od-tchar" style="--td: 152ms;">e</span><span class="od-tchar" style="--td: 190ms;"> </span><span class="od-tchar" style="--td: 228ms;">M</span><span class="od-tchar" style="--td: 266ms;">i</span><span class="od-tchar" style="--td: 304ms;">m</span></h2>
+                <div class="row align-items-center">
+                    <div class="col-lg-4 text-center mb-4">
+                        <div class="img-placeholder img-sobre-placeholder mx-auto">
+                            <img src="assets/IMG_20251211_173609.jpg" alt="Foto pessoal de Lucas de Sousa e Silva" class="img-fluid rounded" id="sobreFoto" loading="lazy" decoding="async" onerror="this.parentElement.classList.add('no-image')">
+                            <span class="img-fallback">Sem imagem selecionada</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <p id="sobreTexto">
+                            Sou Lucas, estudante de Desenvolvimento de Sistemas com paix├úo por tecnologia e programa├º├úo.
+                            Gosto de transformar ideias em solu├º├Áes digitais e estou sempre buscando aprender novas
+                            ferramentas e linguagens. Acredito que a tecnologia ├® uma ferramenta poderosa para
+                            resolver problemas do dia a dia.
+                        </p>
+                        <div class="about-data-panel mt-4">
+                            <div class="row">
+                                <div class="col-sm-6">
+                                    <ul class="list-unstyled mb-0" id="sobreDados1">
+                                        <li class="mb-3"><i class="bi bi-person-fill text-accent" aria-hidden="true"></i><strong>Nome:</strong> Lucas de Sousa e Silva</li>
+                                        <li class="mb-3"><i class="bi bi-geo-alt-fill text-accent" aria-hidden="true"></i><strong>Localiza├º├úo:</strong> S├úo Paulo (SP)</li>
+                                        <li class="mb-0"><i class="bi bi-telephone-fill text-accent" aria-hidden="true"></i><strong>Telefone:</strong> (11) 94536-7790 / (11) 98567-7899</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="list-unstyled mb-0" id="sobreDados2">
+                                        <li class="mb-3"><i class="bi bi-envelope-fill text-accent" aria-hidden="true"></i><strong>E-mail:</strong> lucas.2008.sousa@gmail.com</li>
+                                        <li class="mb-0"><i class="bi bi-translate text-accent" aria-hidden="true"></i><strong>Idiomas:</strong> Ingl├¬s intermedi├írio, Espanhol b├ísico</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORMA├ç├âO -->
+        <section id="formacao" class="section-padding section-light" aria-labelledby="formacao-title">
+            <div class="container">
+                <h2 id="formacao-title" class="section-title text-center mx-auto d-block od-title--split"><span class="od-tchar" style="--td: 0ms;">F</span><span class="od-tchar" style="--td: 38ms;">o</span><span class="od-tchar" style="--td: 76ms;">r</span><span class="od-tchar" style="--td: 114ms;">m</span><span class="od-tchar" style="--td: 152ms;">a</span><span class="od-tchar" style="--td: 190ms;">├º</span><span class="od-tchar" style="--td: 228ms;">├ú</span><span class="od-tchar" style="--td: 266ms;">o</span><span class="od-tchar" style="--td: 304ms;"> </span><span class="od-tchar" style="--td: 342ms;">A</span><span class="od-tchar" style="--td: 380ms;">c</span><span class="od-tchar" style="--td: 418ms;">a</span><span class="od-tchar" style="--td: 456ms;">d</span><span class="od-tchar" style="--td: 494ms;">├¬</span><span class="od-tchar" style="--td: 532ms;">m</span><span class="od-tchar" style="--td: 570ms;">i</span><span class="od-tchar" style="--td: 608ms;">c</span><span class="od-tchar" style="--td: 646ms;">a</span></h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="timeline" id="formacaoTimeline">
+                            <div class="timeline-item fade-in">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <h3>Tecn├│logo em An├ílise e Desenvolvimento de Sistemas</h3>
+                                    <span class="text-soft">Instituto Federal de S├úo Paulo ÔÇö Campus Guarulhos ÔÇö Cursando (2┬║ semestre) ÔÇö Conclus├úo em 2028</span>
+                                </div>
+                            </div>
+                        <span class="od-charge" aria-hidden="true" style="transform: scaleY(0);"></span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPET├èNCIAS -->
+        <section id="competencias" class="section-padding section-dark" aria-labelledby="competencias-title">
+            <div class="container">
+                <h2 id="competencias-title" class="section-title text-center mx-auto d-block od-title--split"><span class="od-tchar" style="--td: 0ms;">C</span><span class="od-tchar" style="--td: 38ms;">o</span><span class="od-tchar" style="--td: 76ms;">n</span><span class="od-tchar" style="--td: 114ms;">h</span><span class="od-tchar" style="--td: 152ms;">e</span><span class="od-tchar" style="--td: 190ms;">c</span><span class="od-tchar" style="--td: 228ms;">i</span><span class="od-tchar" style="--td: 266ms;">m</span><span class="od-tchar" style="--td: 304ms;">e</span><span class="od-tchar" style="--td: 342ms;">n</span><span class="od-tchar" style="--td: 380ms;">t</span><span class="od-tchar" style="--td: 418ms;">o</span><span class="od-tchar" style="--td: 456ms;">s</span><span class="od-tchar" style="--td: 494ms;"> </span><span class="od-tchar" style="--td: 532ms;">e</span><span class="od-tchar" style="--td: 570ms;"> </span><span class="od-tchar" style="--td: 608ms;">C</span><span class="od-tchar" style="--td: 646ms;">o</span><span class="od-tchar" style="--td: 684ms;">m</span><span class="od-tchar" style="--td: 722ms;">p</span><span class="od-tchar" style="--td: 760ms;">e</span><span class="od-tchar" style="--td: 798ms;">t</span><span class="od-tchar" style="--td: 836ms;">├¬</span><span class="od-tchar" style="--td: 874ms;">n</span><span class="od-tchar" style="--td: 912ms;">c</span><span class="od-tchar" style="--td: 950ms;">i</span><span class="od-tchar" style="--td: 988ms;">a</span><span class="od-tchar" style="--td: 1026ms;">s</span></h2>
+                <div class="row g-4" id="competenciasCards">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 fade-in">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="bi bi-code-slash me-2 text-accent" aria-hidden="true"></i>Linguagens e Frameworks</h3>
+                                <div class="skill-tags" id="tagLinguagens">
+                                    <span class="badge badge-accent m-1">HTML</span>
+                                    <span class="badge badge-accent m-1">CSS</span>
+                                    <span class="badge badge-accent m-1">JavaScript</span>
+                                    <span class="badge badge-accent m-1">C</span>
+                                    <span class="badge badge-accent m-1">Python</span>
+                                    <span class="badge badge-accent m-1">Apps Script</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 fade-in">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="bi bi-tools me-2 text-accent" aria-hidden="true"></i>Ferramentas</h3>
+                                <div class="skill-tags" id="tagFerramentas">
+                                    <span class="badge badge-info m-1">Git</span>
+                                    <span class="badge badge-info m-1">GitHub</span>
+                                    <span class="badge badge-info m-1">Excel</span>
+                                    <span class="badge badge-info m-1">Google Sheets</span>
+                                    <span class="badge badge-info m-1">OpenCode</span>
+                                    <span class="badge badge-info m-1">Code::Blocks</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 fade-in">
+                            <div class="card-body">
+                                <h3 class="card-title"><i class="bi bi-people-fill me-2 text-accent" aria-hidden="true"></i>Soft Skills</h3>
+                                <div class="skill-tags" id="tagSoftSkills">
+                                    <span class="badge badge-tertiary m-1">Trabalho em equipe</span>
+                                    <span class="badge badge-tertiary m-1">Comunica├º├úo</span>
+                                    <span class="badge badge-tertiary m-1">Proatividade</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJETOS -->
+        <section id="projetos" class="section-padding section-light" aria-labelledby="projetos-title">
+            <div class="container">
+                <h2 id="projetos-title" class="section-title text-center mx-auto d-block od-title--split"><span class="od-tchar" style="--td: 0ms;">P</span><span class="od-tchar" style="--td: 38ms;">r</span><span class="od-tchar" style="--td: 76ms;">o</span><span class="od-tchar" style="--td: 114ms;">j</span><span class="od-tchar" style="--td: 152ms;">e</span><span class="od-tchar" style="--td: 190ms;">t</span><span class="od-tchar" style="--td: 228ms;">o</span><span class="od-tchar" style="--td: 266ms;">s</span></h2>
+                <div class="row g-4" id="projetosGrid">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 project-card fade-in">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <i class="bi bi-filetype-py project-icon" aria-hidden="true"></i>
+                                </div>
+                                <h3 class="card-title text-center">Guessing Game Python</h3>
+                                <p class="card-text">Jogo de adivinha├º├úo desenvolvido em Python. O jogador tenta adivinhar um n├║mero aleat├│rio com dicas de "maior" ou "menor".</p>
+                                <div class="skill-tags mb-3 text-center">
+                                    <span class="badge badge-accent m-1">Python</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://github.com/sousa2008/guessing-game-python" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer"><i class="bi bi-github me-1" aria-hidden="true"></i>C├│digo</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card h-100 project-card fade-in">
+                            <div class="card-body">
+                                <div class="text-center mb-3">
+                                    <i class="bi bi-lightning-charge-fill project-icon" aria-hidden="true"></i>
+                                </div>
+                                <h3 class="card-title text-center">Pok├®dex</h3>
+                                <p class="card-text">Aplica├º├úo que consulta e exibe informa├º├Áes sobre Pok├®mon, com interface interativa para explorar dados de cada esp├®cie.</p>
+                                <div class="skill-tags mb-3 text-center">
+                                    <span class="badge badge-accent m-1">HTML</span>
+                                    <span class="badge badge-accent m-1">CSS</span>
+                                    <span class="badge badge-accent m-1">JavaScript</span>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <a href="https://github.com/sousa2008/Pok-dex" class="btn btn-sm btn-outline-primary" target="_blank" rel="noopener noreferrer"><i class="bi bi-github me-1" aria-hidden="true"></i>C├│digo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- EXPERI├èNCIAS -->
+        <section id="experiencias" class="section-padding section-light" aria-labelledby="experiencias-title">
+            <div class="container">
+                <h2 id="experiencias-title" class="section-title text-center mx-auto d-block od-title--split"><span class="od-tchar" style="--td: 0ms;">E</span><span class="od-tchar" style="--td: 38ms;">x</span><span class="od-tchar" style="--td: 76ms;">p</span><span class="od-tchar" style="--td: 114ms;">e</span><span class="od-tchar" style="--td: 152ms;">r</span><span class="od-tchar" style="--td: 190ms;">i</span><span class="od-tchar" style="--td: 228ms;">├¬</span><span class="od-tchar" style="--td: 266ms;">n</span><span class="od-tchar" style="--td: 304ms;">c</span><span class="od-tchar" style="--td: 342ms;">i</span><span class="od-tchar" style="--td: 380ms;">a</span><span class="od-tchar" style="--td: 418ms;">s</span><span class="od-tchar" style="--td: 456ms;"> </span><span class="od-tchar" style="--td: 494ms;">R</span><span class="od-tchar" style="--td: 532ms;">e</span><span class="od-tchar" style="--td: 570ms;">l</span><span class="od-tchar" style="--td: 608ms;">e</span><span class="od-tchar" style="--td: 646ms;">v</span><span class="od-tchar" style="--td: 684ms;">a</span><span class="od-tchar" style="--td: 722ms;">n</span><span class="od-tchar" style="--td: 760ms;">t</span><span class="od-tchar" style="--td: 798ms;">e</span><span class="od-tchar" style="--td: 836ms;">s</span></h2>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8" id="experienciasLista">
+                        <div class="experience-item mb-4 rounded shadow-sm fade-in">
+                            <div class="d-flex justify-content-between align-items-start flex-wrap">
+                                <div>
+                                    <h3>T├®cnico em An├ílise e Desenvolvimento de Sistemas</h3>
+                                    <h4 class="text-accent">MA2 Transportes Rodovi├írios</h4>
+                                </div>
+                                <span class="badge badge-accent">Jun/2026 ÔÇö Atual</span>
+                            </div>
+                            <ul class="mt-3 mb-0">
+                                <li>ReUpload do site da empresa para o WordPress</li>
+                                <li>Controle e cria├º├úo de planilhas Google Sheets com atualiza├º├Áes di├írias e scripts</li>
+                                <li>Profissionaliza├º├úo do Instagram da empresa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOBBIES -->
+        <section id="hobbies" class="section-padding section-light" aria-labelledby="hobbies-title">
+            <div class="container">
+                <h2 id="hobbies-title" class="section-title text-center mx-auto d-block od-title--split"><span class="od-tchar" style="--td: 0ms;">H</span><span class="od-tchar" style="--td: 38ms;">o</span><span class="od-tchar" style="--td: 76ms;">b</span><span class="od-tchar" style="--td: 114ms;">b</span><span class="od-tchar" style="--td: 152ms;">i</span><span class="od-tchar" style="--td: 190ms;">e</span><span class="od-tchar" style="--td: 228ms;">s</span><span class="od-tchar" style="--td: 266ms;"> </span><span class="od-tchar" style="--td: 304ms;">e</span><span class="od-tchar" style="--td: 342ms;"> </span><span class="od-tchar" style="--td: 380ms;">L</span><span class="od-tchar" style="--td: 418ms;">a</span><span class="od-tchar" style="--td: 456ms;">z</span><span class="od-tchar" style="--td: 494ms;">e</span><span class="od-tchar" style="--td: 532ms;">r</span></h2>
+                <p class="text-center mb-5 section-intro" id="hobbiesIntro">Fora do ambiente profissional, gosto de...</p>
+                <div class="row g-4 justify-content-center" id="hobbiesGrid">
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="hobby-item h-100 fade-in">
+                            <i class="bi bi-braces hobby-icon" aria-hidden="true"></i>
+                            <p class="mt-3">Programa├º├úo</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="hobby-item h-100 fade-in">
+                            <i class="bi bi-book hobby-icon" aria-hidden="true"></i>
+                            <p class="mt-3">Leitura</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="hobby-item h-100 fade-in">
+                            <i class="bi bi-trophy hobby-icon" aria-hidden="true"></i>
+                            <p class="mt-3">Academia</p>
+                        </div>
+                    </div>
+                    <div class="col-6 col-md-3 text-center">
+                        <div class="hobby-item h-100 fade-in">
+                            <i class="bi bi-controller hobby-icon" aria-hidden="true"></i>
+                            <p class="mt-3">Videogame</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VIAGENS -->
+        <section id="viagens" class="section-padding section-dark" aria-labelledby="viagens-title">
+            <div class="container">
+                <h2 id="viagens-title" class="section-title text-center mx-auto d-block od-title--split"><span class="od-tchar" style="--td: 0ms;">V</span><span class="od-tchar" style="--td: 38ms;">i</span><span class="od-tchar" style="--td: 76ms;">a</span><span class="od-tchar" style="--td: 114ms;">g</span><span class="od-tchar" style="--td: 152ms;">e</span><span class="od-tchar" style="--td: 190ms;">n</span><span class="od-tchar" style="--td: 228ms;">s</span></h2>
+                <p class="text-center mb-5 section-intro" id="viagensIntro">Lugares que visitei e experi├¬ncias que me marcaram...</p>
+                <div class="row g-4" id="viagensGrid">
+                    <div class="col-md-4">
+                        <div class="card h-100 fade-in">
+                            <div class="card-body text-center">
+                                <i class="bi bi-geo-alt-fill place-icon" aria-hidden="true"></i>
+                                <h3 class="card-title mt-3">Campos do Jord├úo</h3>
+                                <p class="card-text">Cidade serrana conhecida pelo clima frio, trilhas e paisagens naturais.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 fade-in">
+                            <div class="card-body text-center">
+                                <i class="bi bi-geo-alt-fill place-icon" aria-hidden="true"></i>
+                                <h3 class="card-title mt-3">Curitiba</h3>
+                                <p class="card-text">Capital paranaense com ├│tima infraestrutura, parques e cultura.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card h-100 fade-in">
+                            <div class="card-body text-center">
+                                <i class="bi bi-geo-alt-fill place-icon" aria-hidden="true"></i>
+                                <h3 class="card-title mt-3">Porto Seguro</h3>
+                                <p class="card-text">Destino de praia com hist├│ria, ponte e vida noturna.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" class="section-padding section-light" aria-labelledby="contato-title">
+            <div class="container">
+                <h2 id="contato-title" class="section-title text-center mx-auto d-block od-title--split"><span class="od-tchar" style="--td: 0ms;">C</span><span class="od-tchar" style="--td: 38ms;">o</span><span class="od-tchar" style="--td: 76ms;">n</span><span class="od-tchar" style="--td: 114ms;">t</span><span class="od-tchar" style="--td: 152ms;">a</span><span class="od-tchar" style="--td: 190ms;">t</span><span class="od-tchar" style="--td: 228ms;">o</span></h2>
+                <div class="row g-5">
+                    <div class="col-lg-5">
+                        <h3 class="contact-heading">Entre em contato</h3>
+                        <p>
+                            Se quiser me contatar para oportunidades, parcerias ou apenas trocar uma ideia,
+                            fique ├á vontade para me enviar uma mensagem.
+                        </p>
+                        <div class="contact-info mt-4 fade-in" id="contatoInfo">
+                            <p><i class="bi bi-envelope-fill me-3" aria-hidden="true"></i><span id="contatoEmail">lucas.2008.sousa@gmail.com</span></p>
+                            <p><i class="bi bi-phone-fill me-3" aria-hidden="true"></i><span id="contatoTelefone">(11) 94536-7790 / (11) 98567-7899</span></p>
+                            <p><i class="bi bi-geo-alt-fill me-3" aria-hidden="true"></i><span id="contatoLocal">S├úo Paulo</span></p>
+                        </div>
+                        <div class="contact-socials mt-4" id="contatoSocial">
+                            <a href="https://github.com/sousa2008" class="btn btn-outline-dark btn-sm me-2" target="_blank" rel="noopener noreferrer"><i class="bi bi-github me-1" aria-hidden="true"></i>GitHub</a>
+                            <a href="https://www.linkedin.com/in/lucas-s-5baa96330/" class="btn btn-outline-primary btn-sm me-2" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin me-1" aria-hidden="true"></i>LinkedIn</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <form id="formContato" class="contato-form-card needs-validation fade-in" novalidate="" aria-label="Formul├írio de contato">
+                            <div class="mb-3">
+                                <label for="nomeContato" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="nomeContato" required="" autocomplete="name" maxlength="200">
+                            </div>
+                            <div class="mb-3">
+                                <label for="emailContato" class="form-label">E-mail</label>
+                                <input type="email" class="form-control" id="emailContato" required="" autocomplete="email" inputmode="email" maxlength="254">
+                            </div>
+                            <div class="mb-3">
+                                <label for="assuntoContato" class="form-label">Assunto</label>
+                                <input type="text" class="form-control" id="assuntoContato" required="" maxlength="200">
+                            </div>
+                            <div class="mb-3">
+                                <label for="mensagemContato" class="form-label">Mensagem</label>
+                                <textarea class="form-control" id="mensagemContato" rows="5" required="" maxlength="2000"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-send me-2" aria-hidden="true"></i>Enviar mensagem
+                            </button>
+                            <p class="small mt-3 mb-0">
+                                <i class="bi bi-info-circle me-1" aria-hidden="true"></i>
+                                Ao enviar, o seu aplicativo de e-mail abre com a mensagem pronta ÔÇö confirme o envio por l├í.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container text-center">
+            <p class="mb-2">
+                <a href="#home" class="text-decoration-none">
+                    <i class="bi bi-arrow-up-circle me-1" aria-hidden="true"></i>Voltar ao topo
+                </a>
+            </p>
+            <p class="mb-2">
+                <a href="catalogo.html" class="text-decoration-none">Cat├ílogo Impeccable</a>
+                <span aria-hidden="true">┬À</span>
+                <a href="aplicacoes.html" class="text-decoration-none">Registros da v2</a>
+            </p>
+            <div class="mb-3" id="footerSocial">
+                <a href="https://github.com/sousa2008" class="me-3" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="bi bi-github fs-5" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/lucas-s-5baa96330/" class="me-3" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bi bi-linkedin fs-5" aria-hidden="true"></i></a>
+                <a href="mailto:lucas.2008.sousa@gmail.com" aria-label="Enviar e-mail"><i class="bi bi-envelope-fill fs-5" aria-hidden="true"></i></a>
+            </div>
+            <p class="small mb-0">
+                ┬® 2026 <span id="footerNome">Lucas de Sousa e Silva</span>. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/overdrive.js"></script>
+
+
+</body></html>

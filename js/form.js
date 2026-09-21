@@ -94,7 +94,7 @@ function addProjeto(data = null) {
                     <input type="text" class="form-control" id="projetos-${idx}-nome" name="projetos[${idx}][nome]" value="${escapeHtml(data?.nome || '')}" maxlength="200">
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label" for="projetos-${idx}-tecnologias">Tecnologias <small class="text-muted">(vírgula)</small></label>
+                    <label class="form-label" for="projetos-${idx}-tecnologias">Tecnologias <small class="text-soft">(vírgula)</small></label>
                     <input type="text" class="form-control" id="projetos-${idx}-tecnologias" name="projetos[${idx}][tecnologias]" value="${escapeHtml(data?.tecnologias || '')}" maxlength="400">
                 </div>
                 <div class="col-12">
@@ -149,7 +149,7 @@ function addExperiencia(data = null) {
                     <input type="text" class="form-control" id="experiencias-${idx}-periodo" name="experiencias[${idx}][periodo]" value="${escapeHtml(data?.periodo || '')}" placeholder="Ex: Jan/2024 – Atual" maxlength="120">
                 </div>
                 <div class="col-md-6">
-                    <label class="form-label" for="experiencias-${idx}-competencias">Competências utilizadas <small class="text-muted">(vírgula)</small></label>
+                    <label class="form-label" for="experiencias-${idx}-competencias">Competências utilizadas <small class="text-soft">(vírgula)</small></label>
                     <input type="text" class="form-control" id="experiencias-${idx}-competencias" name="experiencias[${idx}][competencias]" value="${escapeHtml(data?.competencias || '')}" maxlength="400">
                 </div>
                 <div class="col-12">
